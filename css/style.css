@@ -3,7 +3,15 @@ body, html {
   height: 100%;
   overflow: hidden;
 }
+.center {
+  border:solid black 5px;
+  padding: 100px;
 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .image {
   display:none;
