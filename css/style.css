@@ -1,0 +1,38 @@
+body, html {
+  font-family: Arial, sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+.image {
+  display:none;
+}
+
+.gradient {
+
+background: linear-gradient(327deg, #00ffbd, #0042ff, #ff4e4e);
+background-size: 600% 600%;
+
+-webkit-animation: gradient 59s ease infinite;
+-moz-animation: gradient 59s ease infinite;
+animation: gradient 59s ease infinite;
+
+}
+
+
+@-webkit-keyframes gradient {
+    0%{background-position:40% 0%}
+    50%{background-position:61% 100%}
+    100%{background-position:40% 0%}
+}
+@-moz-keyframes gradient {
+    0%{background-position:40% 0%}
+    50%{background-position:61% 100%}
+    100%{background-position:40% 0%}
+}
+@keyframes gradient {
+    0%{background-position:40% 0%}
+    50%{background-position:61% 100%}
+    100%{background-position:40% 0%}
+}
