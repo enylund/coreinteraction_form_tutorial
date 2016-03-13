@@ -2,21 +2,31 @@
 
   FORMS WORKSHOP
 
-  1. In the index.html file create a form that submits to output.html via
-     the GET method. Place the form inside the div with a class of center (.center).
-  2. Add a radio button that asks if the user likes nature.
-  3. Add three text fields that as for numbers between 0 & 250
-  4. Add a textarea that asks for the users name.
-  5. Add a submit button
+  1.  In the index.html file create a form that submits to output.html via
+      the GET method. Place the form inside the div with a class of center (.center).
+  2.  Add a radio button that asks if the user likes nature.
+  3.  Add three text fields that ask for numbers between 0 & 250
+  4.  Add a final text field that asks how happy the user is between 0-100.
+  6.  Add a textarea that asks for the users name.
+  7.  Add a submit button
 
   Note: be sure to name all your inputs
 
-  5. Click the button to see that your inputs are getting passed in the url. Are they?
-  6. Assign all the inputs to their own variables (I give you a function for doing this)
-  7. Log the variables to the console to check that they are getting assigned.
-  8. If the user checked 'gradient' show the div with a class of gradient (.gradient).
-  9. Append their message to the div with a class of message (.message)
-  10. Use the three numbers to set the background color of the body using .css and rgb(xx,xx,xx)
+  8.  Click the button to see that your inputs are getting passed in the url.
+      They should come after a `?`.
+  9.  Assign all the inputs to their own variables. I give you a function for
+      doing this called getParameterByName().
+  10. Log the variables to the console to check that they are getting assigned.
+  11. Check if the user likes nature. If they do play them nature sounds using the
+      function called playAudio().
+  12. Next check to see if the user submitted three colors that are between 0 and 255.
+  13. Use the three numbers to set the background color of the body. Note that you
+      can set colors via their rgb values... rgb(xx,xx,xx).
+  14. Else add a gradient to the body by adding the gradient class (.gradient).
+  15. If they entered a name, Change the name from Jane to what the user entered. The text is in a div with a class of 'message'.
+  16. Finally make a variable with this html: <img src='img/baby.gif'>.
+      Append it to the div with a class of image based on how happy they are.
+      For example if they typed `5`, add it five times.
 
 
 
@@ -27,33 +37,49 @@ $(document).ready(function(){
 
 
 	// Your code goes here.
-  // Here is an example of how to assign inputs to variables
   var nature = getParameterByName('nature');
   var valueOne = getParameterByName('value-one');
   var valueTwo = getParameterByName('value-two');
   var valueThree = getParameterByName('value-three');
   var textarea = getParameterByName('textarea');
+  var valueFour = getParameterByName('value-four');
 
+  console.log(nature);
+  console.log(valueOne);
+  console.log(valueTwo);
+  console.log(valueThree);
+  console.log(textarea);
 
   if(nature == 'on') {
     playAudio("nature-sounds");
   }
 
-  $("body").css('background-color', "rgb("+valueOne+", "+valueTwo+", "+valueThree+")");
+  if (valueOne && valueTwo && valueThree) {
+    $("body").css('background-color', "rgb("+valueOne+", "+valueTwo+", "+valueThree+")");
+  } else {
+    $("body").addClass("gradient");
+  }
 
-  $()
+  if (textarea) {
+    $('.message').html(textarea);
+  }
 
+  var baby = "<img src='img/baby.gif'>";
 
+  for (i = 1; i < valueFour; i++) {
 
+    $('.image').append(baby);
+
+  }
 
 
 });
 
 
 
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    url = url.toLowerCase(); // This is just to avoid case sensitiveness
+function getParameterByName(name) {
+    url = window.location.href;
+    url = url.toLowerCase();
     name = name.replace(/[\[\]]/g, "\\$&");
     var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
         results = regex.exec(url);

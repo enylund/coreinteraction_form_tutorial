@@ -13,8 +13,16 @@ body, html {
   transform: translate(-50%, -50%);
 }
 
-.image {
-  display:none;
+.message {
+  font-size: 100px;
+  font-family: arial;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
 .gradient {
