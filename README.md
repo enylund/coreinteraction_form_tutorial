@@ -11,7 +11,7 @@ In this workshop you'll be creating a basic form using the HTML we learned in cl
   6.  Add a textarea that asks for the users name.
   7.  Add a submit button
 
-  ### Note: be sure to name all your inputs
+  ##### Note: be sure to name all your inputs
 
   8.  Click the button to see that your inputs are getting passed in the url. They should come after a `?`.
   9.  Assign all the inputs to their own variables. I give you a function for doing this called `getParameterByName()`.
