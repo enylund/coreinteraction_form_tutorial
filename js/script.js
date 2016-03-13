@@ -44,11 +44,7 @@ $(document).ready(function(){
   var textarea = getParameterByName('textarea');
   var valueFour = getParameterByName('value-four');
 
-  console.log(nature);
-  console.log(valueOne);
-  console.log(valueTwo);
-  console.log(valueThree);
-  console.log(textarea);
+  console.log(nature, valueOne, valueTwo, valueThree, textarea, valueFour);
 
   if(nature == 'on') {
     playAudio("nature-sounds");
