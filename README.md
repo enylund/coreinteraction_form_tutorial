@@ -26,4 +26,6 @@ In this workshop you'll be creating a basic form using the HTML we learned in cl
       For example if they typed `5`, add it five times.
 
 
+
+
 <img src='img/baby.gif'>
