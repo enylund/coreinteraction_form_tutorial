@@ -37,40 +37,6 @@ $(document).ready(function(){
 
 
 	// Your code goes here.
-  var nature = getParameterByName('nature');
-  var valueOne = getParameterByName('value-one');
-  var valueTwo = getParameterByName('value-two');
-  var valueThree = getParameterByName('value-three');
-  var textarea = getParameterByName('textarea');
-  var valueFour = getParameterByName('value-four');
-
-  console.log(nature);
-  console.log(valueOne);
-  console.log(valueTwo);
-  console.log(valueThree);
-  console.log(textarea);
-
-  if(nature == 'on') {
-    playAudio("nature-sounds");
-  }
-
-  if (valueOne && valueTwo && valueThree) {
-    $("body").css('background-color', "rgb("+valueOne+", "+valueTwo+", "+valueThree+")");
-  } else {
-    $("body").addClass("gradient");
-  }
-
-  if (textarea) {
-    $('.message').html(textarea);
-  }
-
-  var baby = "<img src='img/baby.gif'>";
-
-  for (i = 1; i < valueFour; i++) {
-
-    $('.image').append(baby);
-
-  }
 
 
 });
