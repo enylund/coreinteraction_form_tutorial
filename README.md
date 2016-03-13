@@ -24,3 +24,6 @@ In this workshop you'll be creating a basic form using the HTML we learned in cl
   16. Finally make a variable with this html: `<img src='img/baby.gif'>`.
       Append it to the div with a class of image based on how happy they are.
       For example if they typed `5`, add it five times.
+
+
+<img src='img/baby.gif'>
